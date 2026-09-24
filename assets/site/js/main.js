@@ -47,4 +47,15 @@
 
   var y=document.getElementById('year');
   if(y)y.textContent=new Date().getFullYear();
+
+  // Theme toggle: default is light; the choice persists across visits.
+  var root=document.documentElement, tt=document.getElementById('themeToggle');
+  function setTheme(t){
+    if(t==='dark')root.setAttribute('data-theme','dark');
+    else root.removeAttribute('data-theme');
+    try{localStorage.setItem('mca-theme',t)}catch(e){}
+  }
+  if(tt)tt.addEventListener('click',function(){
+    setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');
+  });
 })();
