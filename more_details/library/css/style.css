@@ -38,6 +38,8 @@ body{
 }
 img{
     background-color:white;
+    max-width:100%;
+    height:auto;
 }
 mark{
    background-color: yellow;
@@ -151,3 +153,6 @@ mark{
   .hcd{
     background: url(../img/software/module1/module1/1.1/1.1-01.jpg);
   }
+/* phone: keep images and code blocks inside the viewport */
+img{max-width:100%;height:auto}
+pre,code{white-space:pre-wrap;word-break:break-word}
