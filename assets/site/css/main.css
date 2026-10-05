@@ -8,14 +8,14 @@
   --res-border:#c9d8f2; --about-bg:#ffffff;
   color-scheme:light;
 }
-/* dark mode (default is light; toggled via the header button) */
+/* dark mode: AMOLED black (default is light; toggled via the header button) */
 [data-theme="dark"]{
   --blue:#5b8def; --blue-d:#8fb0f7;
-  --ink:#e9eff8; --muted:#9db0c9; --line:#22314c; --bg:#0a1120; --card:#101a2e;
+  --ink:#f2f5fa; --muted:#9aa7bd; --line:#262626; --bg:#000000; --card:#0d0d0d;
   --amber:#e8a13c; --green:#3ddc97; --purple:#b39dff; --red:#ff7b7b;
-  --heading:#eef3fb; --header-bg:rgba(10,17,32,.94); --hover-bg:#182747;
-  --search-bg:#101a2e; --tab-bg:#101a2e; --res-bg:#152238; --res-hover:#1b2c49;
-  --res-border:#2b3f63; --about-bg:#0d1526;
+  --heading:#f4f7fc; --header-bg:rgba(0,0,0,.94); --hover-bg:#161616;
+  --search-bg:#0d0d0d; --tab-bg:#0d0d0d; --res-bg:#0a0a0a; --res-hover:#171717;
+  --res-border:#2b2b2b; --about-bg:#050505;
   color-scheme:dark;
 }
 *{margin:0;padding:0;box-sizing:border-box}
