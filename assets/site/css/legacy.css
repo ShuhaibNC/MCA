@@ -1,9 +1,17 @@
-/* Shared corporate chrome for legacy content pages — scoped classes only. */
-.mca-bar{background:#1e3a5f;color:#fff;font-family:Arial,Helvetica,sans-serif;
-  padding:10px 18px;display:flex;align-items:center;gap:12px;font-size:15px}
-.mca-bar a{color:#fff;text-decoration:none;font-weight:bold;font-size:16px}
+/* Shared chrome for legacy content pages — scoped classes only.
+   VitePress-style: Inter, soft backgrounds, brand accent. */
+.mca-bar{background:#f6f6f7;color:#3c3c43;font-family:'Inter',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  padding:10px 18px;display:flex;align-items:center;gap:12px;font-size:15px;border-bottom:1px solid #e2e2e3}
+.mca-bar a{color:#3451b2;text-decoration:none;font-weight:600;font-size:16px}
 .mca-bar a:hover{text-decoration:underline}
-.mca-bar span{opacity:.75;font-size:13px}
-.mca-foot{background:#1a1a1a;color:#bbb;font-family:Arial,Helvetica,sans-serif;
-  text-align:center;padding:14px 10px;font-size:13px;margin-top:24px}
-.mca-foot b{color:#fff}
+.mca-bar span{opacity:.75;font-size:13px;color:#67676c}
+.mca-foot{background:#f6f6f7;color:#67676c;font-family:'Inter',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  text-align:center;padding:14px 10px;font-size:13px;margin-top:24px;border-top:1px solid #e2e2e3}
+.mca-foot b{color:#3c3c43}
+@media (prefers-color-scheme: dark){
+  .mca-bar{background:#202127;color:#fffff5;border-bottom-color:#2e2e32}
+  .mca-bar a{color:#a8b1ff}
+  .mca-bar span{color:#a0a0ab}
+  .mca-foot{background:#202127;color:#a0a0ab;border-top-color:#2e2e32}
+  .mca-foot b{color:#fffff5}
+}

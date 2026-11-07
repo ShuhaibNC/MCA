@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{if(localStorage.getItem('mca-theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+<script>try{(function(){var p={};try{p=JSON.parse(localStorage.getItem('shuhaib-site-prefs-v1')||'{}')||{}}catch(e){}if(!p.theme&&localStorage.getItem('mca-theme')==='dark')p.theme='amoled';var r=document.documentElement;r.dataset.siteTheme=p.theme||'default';r.dataset.fontSize=p.fontSize||'default';r.dataset.density=p.density||'comfortable';r.dataset.radius=p.radius||'default';if(p.accent){var a=p.accent,n=parseInt(a.slice(1),16),c=[(n>>16)&255,(n>>8)&255,n&255],mix=function(t,amt){return 'rgb('+c.map(function(v,i){return Math.round(v+(t[i]-v)*amt)}).join(', ')+')'};r.style.setProperty('--blue',a);r.style.setProperty('--blue-d',mix([0,0,0],.18));r.style.setProperty('--blue-soft',mix([255,255,255],.86));}})()}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MCA Notes Hub — KTU Study Resources, Notes &amp; Question Papers</title>
 <meta name="description" content="Complete study resources for KTU Master of Computer Applications: semester-wise notes, question papers, syllabus and lab programs.">
@@ -14,13 +14,28 @@
   <div class="wrap">
     <a class="brand" href="#top"><span class="brand-mark">M</span><span>MCA Notes Hub<small>KTU RESOURCES</small></span></a>
     <nav class="nav">
-      <a href="#top">Home</a><a href="#semesters">Semesters</a><a href="#about">About</a>
+      <a href="#top">Home</a><a href="#semesters">Semesters</a><a href="#about">About</a><a href="https://shuhaibnc.github.io/" target="_blank" rel="noopener">Main Site</a>
     </nav>
     <a class="btn header-cta" href="#semesters">Browse Notes</a>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
-      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-    </button>
+    <div class="theme-picker">
+      <button class="theme-picker-btn" id="themePickerBtn" type="button" aria-label="Theme and customisation" title="Theme and customisation" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="10" r="1" fill="currentColor" stroke="none"/><path d="M12 22C6.5 21.5 4 17.5 5.5 13.5c.8-2.2 2.5-3.5 5-3.5 3.5 0 6 2 6.5 5.5.3 2-.5 4.5-2.5 6.5"/></svg>
+      </button>
+      <div class="theme-panel" id="themePanel" role="dialog" aria-label="Theme and customisation" hidden>
+        <p class="theme-panel-title">Theme</p>
+        <div class="theme-grid" id="themeGrid"></div>
+        <p class="theme-panel-title">Accent colour</p>
+        <div class="accent-row" id="accentRow"></div>
+        <p class="theme-panel-title">Text size</p>
+        <div class="seg-row" id="fontSizeRow" role="group" aria-label="Text size"></div>
+        <p class="theme-panel-title">Density</p>
+        <div class="seg-row" id="densityRow" role="group" aria-label="Density"></div>
+        <p class="theme-panel-title">Corners</p>
+        <div class="seg-row" id="radiusRow" role="group" aria-label="Corner radius"></div>
+        <button type="button" class="theme-reset" id="themeReset">Reset to default</button>
+        <p class="theme-note">Saved on this device — the same theme follows you to the main site.</p>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -104,6 +119,7 @@
     </div>
   </div>
 </footer>
+<script src="assets/site/js/theme.js"></script>
 <script src="assets/site/js/main.js"></script>
 </body>
 </html>
