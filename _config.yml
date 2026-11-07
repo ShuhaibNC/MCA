@@ -1,0 +1,7 @@
+# GitHub Pages (Jekyll) config.
+# Keep the unlinked 300 MB Backup/ folder out of the published site:
+# nothing links to it, and shipping it made the Pages deploy exceed its
+# 10-minute sync window (artifact was ~848 MB). The files stay in the
+# repo and in git history — they are only excluded from publication.
+exclude:
+  - Backup
