@@ -45,6 +45,16 @@
 
   input.addEventListener('input',applyFilter);
 
+  // Tapping Search (or the keyboard's Search/Go key) jumps to the results.
+  // Blur first so the mobile keyboard dismisses instead of yanking the
+  // page back while it scrolls.
+  var form=document.getElementById('searchForm');
+  if(form)form.addEventListener('submit',function(e){
+    e.preventDefault();
+    input.blur();
+    document.getElementById('semesters').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+
   var y=document.getElementById('year');
   if(y)y.textContent=new Date().getFullYear();
 })();

@@ -43,10 +43,10 @@
   <div class="wrap">
     <h1>Every MCA resource,<br><span>one organized hub.</span></h1>
     <p>Semester-wise notes, question papers, syllabus and lab programs for the KTU Master of Computer Applications program — curated for students, by students.</p>
-    <div class="searchbar">
-      <input id="q" type="search" placeholder="Search 280+ resources — try &quot;data structures&quot; or &quot;question paper&quot;…" autocomplete="off">
-      <button class="btn" type="button" onclick="document.getElementById('semesters').scrollIntoView()">Search</button>
-    </div>
+    <form class="searchbar" id="searchForm" role="search" action="#semesters">
+      <input id="q" type="search" placeholder="Search 280+ resources — try &quot;data structures&quot; or &quot;question paper&quot;…" autocomplete="off" aria-label="Search resources">
+      <button class="btn" type="submit">Search</button>
+    </form>
     <div class="stats">
       <div class="stat"><b>4</b><span>Semesters</span></div>
       <div class="stat"><b>35</b><span>Subjects</span></div>

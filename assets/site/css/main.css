@@ -345,13 +345,14 @@ a { color: var(--blue); text-decoration: none; }
 @media (min-width: 640px) { .hero p { font-size: 20px; line-height: 30px; } }
 @media (min-width: 960px) { .hero p { font-size: 24px; line-height: 36px; } }
 .searchbar {
-  display: flex; max-width: 620px; background: var(--search-bg);
+  display: flex; width: 100%; max-width: 620px; min-width: 0; background: var(--search-bg);
   border: 1px solid var(--line); border-radius: var(--radius); padding: 6px;
 }
 .searchbar input {
-  flex: 1; border: 0; outline: 0; font-size: 16px; padding: 12px 16px;
+  flex: 1 1 auto; min-width: 0; width: 0; border: 0; outline: 0; font-size: 16px; padding: 12px 16px;
   border-radius: 10px; color: var(--ink); background: transparent; font-family: inherit;
 }
+.searchbar .btn { flex: none; }
 .searchbar input::placeholder { color: var(--muted); }
 .stats { display: flex; gap: 36px; margin-top: 34px; flex-wrap: wrap; }
 .stat b { display: block; font-size: 30px; letter-spacing: -0.5px; color: var(--heading); }
@@ -432,6 +433,18 @@ html[data-density='compact'] .cards { gap: 12px; }
 html[data-density='compact'] .section { padding: 46px 0; }
 html[data-radius='sharp'] { --radius: 4px; --btn-radius: 4px; }
 html[data-radius='rounded'] { --radius: 20px; --btn-radius: 24px; }
+
+/* Keep the section heading clear of the sticky header when jumping to it. */
+#semesters { scroll-margin-top: 76px; }
+
+@media (max-width: 480px) {
+  /* Stack the search bar on phones: the input + button side-by-side
+     overflowed narrow screens and the button was clipped off-screen.
+     Full-width rows give the button a proper 44px tap target. */
+  .searchbar { flex-direction: column; gap: 6px; padding: 6px; }
+  .searchbar input { width: 100%; }
+  .searchbar .btn { width: 100%; line-height: 44px; }
+}
 
 @media (max-width: 760px) {
   .nav { display: none; }
